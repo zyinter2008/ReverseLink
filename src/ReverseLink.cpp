@@ -8,7 +8,19 @@ struct Node
     Node *next;
 };
 
-Node * CreateLink(int *array, int len){
+Node * createLink(int *array, int len);
+void showLink(const Node * node);
+
+int main() {
+
+	int array[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+	Node *node = createLink(array, 10);
+	showLink(node);
+	cout << "test" << endl;
+	return 0;
+}
+
+Node * createLink(int *array, int len){
 
 	if(NULL == array|| 0 ==len ){
 		return NULL;
@@ -29,11 +41,13 @@ Node * CreateLink(int *array, int len){
 	return head;
 }
 
-int main() {
+void showLink(const Node * node){
 
-	int array[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-	Node *node = CreateLink(array, 10);
+	if(NULL == node)return;
+	const Node *temp = node;
+	while(temp!=NULL){
+		cout << temp->data<< endl;
+		temp = temp->next;
+	}
 
-	cout << "test" << endl;
-	return 0;
 }
