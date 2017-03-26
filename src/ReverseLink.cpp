@@ -12,7 +12,6 @@ Node * recurse(Node *node);
 Node * nonRecurse(Node *node);
 
 int main() {
-
 	int array[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 	Node *node = createLink(array, 10);
 	showLink(node);
@@ -27,7 +26,6 @@ int main() {
 }
 
 Node * createLink(int *array, int len) {
-
 	if (NULL == array || 0 == len) {
 		return NULL;
 	}
@@ -48,7 +46,6 @@ Node * createLink(int *array, int len) {
 }
 
 void showLink(const Node * node) {
-
 	if (NULL == node)
 		return;
 	const Node *temp = node;
@@ -56,7 +53,6 @@ void showLink(const Node * node) {
 		cout << temp->data << endl;
 		temp = temp->next;
 	}
-
 }
 
 Node * recurse(Node *node) {
@@ -85,6 +81,5 @@ Node * nonRecurse(Node *node) {
 	}
 
 	link->next = pre;
-
 	return link;
 }
